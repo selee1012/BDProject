@@ -1,0 +1,8 @@
+# 대용량 raw 데이터는 git에 올리지 않음
+data/*.jsonl
+*.json.gz
+dashboard_data.json
+
+__pycache__/
+*.pyc
+.DS_Store
