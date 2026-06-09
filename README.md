@@ -154,4 +154,4 @@ BDProject/
 
 ## 8. AI Tool Usage
 - **Claude (Claude Code)** : 코드 디버깅(*.py, *.hql, *.sh), Readmd 및 보고서 내용 정리(초안은 본인이 작성), 초기 아키텍처 제안
-- **ChatGPT** : 관련 문서 번역
+- **ChatGPT** : 기술 문서 번역
