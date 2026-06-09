@@ -127,7 +127,6 @@ python -m streamlit run analyze/app.py
 ```
 BDProject/
 ├── README.md
-├── requirements.txt
 ├── data/
 │   ├── Readme.MD                # 데이터 출처·스키마
 │   ├── *_sample.jsonl           # 소스별 샘플 100줄 (전체 데이터는 .gitignore)
@@ -153,5 +152,5 @@ BDProject/
 ```
 
 ## 8. AI Tool Usage
-- **Claude (Claude Code)** : 코드 디버깅(*.py, *.hql, *.sh), Readmd 및 보고서 내용 정리(초안은 본인이 작성), 초기 아키텍처 제안
+- **Claude (Claude Code)** : 코드 디버깅(*.py, *.hql, *.sh), Readme.md 및 보고서 내용 정리(초안은 본인이 작성), 초기 아키텍처 제안
 - **ChatGPT** : 기술 문서 번역
