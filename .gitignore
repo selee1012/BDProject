@@ -1,7 +1,11 @@
-# 대용량 raw 데이터는 git에 올리지 않음
+# 전체 raw 데이터는 용량이 커서 git에 올리지 않음
 data/*.jsonl
 *.json.gz
 dashboard_data.json
+
+# 샘플 데이터는 커밋
+!data/*_sample.jsonl
+!data/dashboard_data.jsonl
 
 __pycache__/
 *.pyc
