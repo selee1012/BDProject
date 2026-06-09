@@ -7,7 +7,7 @@ from pyspark.ml.clustering import KMeans
 spark = SparkSession.builder.appName("export").enableHiveSupport().getOrCreate()
 spark.sparkContext.setLogLevel("WARN")
 
-df = spark.table("devto_articles").select("tags").where(size(col("tags")) > 1)
+df = spark.read.json("/tmp/devto/devto.jsonl").select("tags").where(size(col("tags")) > 1)
 stop = ["webdev","beginners","discuss","tutorial","career","codenewbie",
         "watercooler","showdev","programming","productivity","news",
         "opensource","help","todayilearned","devjournal","writing"]

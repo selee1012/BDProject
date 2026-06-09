@@ -1,3 +1,5 @@
+ADD JAR /usr/hdp/current/hive-webhcat/share/hcatalog/hive-hcatalog-core.jar;
+
 CREATE EXTERNAL TABLE hn_stories (
   id       BIGINT,
   title    STRING,

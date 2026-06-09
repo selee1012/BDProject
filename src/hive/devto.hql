@@ -1,3 +1,5 @@
+ADD JAR /usr/hdp/current/hive-webhcat/share/hcatalog/hive-hcatalog-core.jar;
+
 CREATE EXTERNAL TABLE devto_articles (
   id           BIGINT,
   title        STRING,

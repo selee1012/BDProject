@@ -6,7 +6,7 @@ from pyspark.ml.clustering import KMeans
 spark = SparkSession.builder.appName("tag_analysis2").enableHiveSupport().getOrCreate()
 spark.sparkContext.setLogLevel("WARN")
 
-df = spark.table("devto_articles").select("tags").where(size(col("tags")) > 1)
+df = spark.read.json("/tmp/devto/devto.jsonl").select("tags").where(size(col("tags")) > 1)
 
 # 기술 스택이 아닌 용어들 제거
 stop = ["webdev","beginners","discuss","tutorial","career","codenewbie",
