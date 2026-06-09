@@ -3,11 +3,15 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, size, explode
 from pyspark.ml.feature import StopWordsRemover, Word2Vec, Normalizer
 from pyspark.ml.clustering import KMeans
+import os
 
 spark = SparkSession.builder.appName("export").enableHiveSupport().getOrCreate()
 spark.sparkContext.setLogLevel("WARN")
 
-df = spark.read.json("/tmp/devto/devto.jsonl").select("tags").where(size(col("tags")) > 1)
+base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+path = os.path.join(base_dir, "data", "dashboard_data.json")
+with open(path, "r", encoding="utf-8") as f:
+    df = json.load(f)
 stop = ["webdev","beginners","discuss","tutorial","career","codenewbie",
         "watercooler","showdev","programming","productivity","news",
         "opensource","help","todayilearned","devjournal","writing"]

@@ -3,11 +3,14 @@ import json
 import pandas as pd
 import streamlit as st
 import plotly.express as px
+import os
 
 st.set_page_config(page_title="기술 트렌드 대시보드", layout="wide")
 
 try:
-    with open("../data/dashboard_data.json", "r", encoding="utf-8") as f:
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    path = os.path.join(base_dir, "data", "dashboard_data.json")
+    with open(path, "r", encoding="utf-8") as f:
         data = json.load(f)
 except FileNotFoundError:
     st.error("dashboard_data.json 파일 없음")
